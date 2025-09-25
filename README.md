@@ -4,7 +4,7 @@ A lightweight, stateless HTTP API that converts pounds to kilograms. Implemented
 
 ## Use instructions
 
-To use the API, simply call the public endpoint in this format:
+To use the API, simply call the public endpoint with an HTTP GET in this format:
 
 http://18.222.139.95/convert?lbs=
 
