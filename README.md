@@ -35,7 +35,7 @@ Response should be in the following format if successful (status code 200):
 
 If the connection fails, the instance is likely not running.
 
-### Cleanup Protocol
+## Cleanup Protocol
 
 After the instance is no longer in use, perform the following cleanup protocol:
 
