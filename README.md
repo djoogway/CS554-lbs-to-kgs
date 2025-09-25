@@ -12,7 +12,7 @@ With the integer at the end you wish to convert.
 
 ## Setup instructions
 
-### Use
+### Setup
 
 1. Install curl: `sudo apt update && sudo apt install curl`
 
