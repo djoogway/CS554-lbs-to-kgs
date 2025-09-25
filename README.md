@@ -39,7 +39,14 @@ If the connection fails, the instance is likely not running.
 
 After the instance is no longer in use, perform the following cleanup protocol:
 
-1. If the instance will be spun up again at some point, create a snapshot of the current volume.
-2. Stop the current instance. If the instance is no longer needed *period*, terminate it instead.
-3. Delete the current EB volume. Delete all unneeded volume snapshots as well.
-4. Remove your SSH key from AWS (and your local machine).
+Temporary stop:
+
+1. Create a snapshot of the current EB volume.
+2. Stop the current instance.
+3. Delete the current EB volume and any unnessecary volume snapshots.
+
+Permanent stop (instance service is not needed any longer):
+
+1. Terminate the instance.
+2. Delete current EB volume and prune all snapshots.
+3. Remove your SSH key from AWS (and your local machine).
