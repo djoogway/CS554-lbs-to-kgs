@@ -29,13 +29,11 @@ Rule 2:
 
 ## Systemd configuration
 - This service is provided through a service created through systemd. The service code can be located in deploy/systemd/p1.service. The configuration of this system was copied directly from the assignment document.
-## 
 
 ## Error Handling
 - Missing `lbs` → `400 { error: 'Query param lbs is required and must be a number' }`
 - Non‑numeric `lbs` → `422 { error: 'lbs must be a non-negative, finite number' }`
 - Unknown route → `404 { error: 'Not found' }`
-
 
 ## Operations
 - Managed by `systemd` for restart on failure and boot‑time start.
