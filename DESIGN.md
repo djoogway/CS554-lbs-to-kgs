@@ -1,5 +1,3 @@
-## DESIGN.md
-```markdown
 # DESIGN — Project 1 lbs → kg Service
 
 
