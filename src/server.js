@@ -5,7 +5,7 @@ const app = express();
 app.use(morgan('combined'));
 app.get('/convert', (req, res) => {
     const lbs = Number(req.query.lbs);
-    if (req.query.lbs === undefined || Number.isNaN(lbs)) {
+    if (req.query.lbs === undefined || req.query.lbs.trim() == ""  || Number.isNaN(lbs)) {
         return res.status(400).json({ error: 'Query param lbs is required and must be a number' });
     }
     if (!Number.isFinite(lbs) || lbs < 0) {
