@@ -26,6 +26,8 @@ Rule 2:
 ## Nginx configuration
 - NGINX was configured to reverse proxy at http://127.0.0.1:8080 (in the instance) to a publicly available HTTP listening on port 80. The configuration code can be located in deploy/nginx/p1.conf. Additionally, it was configured to have headers that help log and regulate traffic. I found the headers [here](https://linuxize.com/post/nginx-reverse-proxy).
 
+  I configured NGINX because I wanted to figure out how reverse proxies work firsthand. That's about it.
+
 ## Systemd configuration
 - This service is provided through a service created through systemd. The service code can be located in deploy/systemd/p1.service. The configuration of this system was copied directly from the assignment document.
 
@@ -33,4 +35,3 @@ Rule 2:
 - Missing `lbs` → `400 { error: 'Query param lbs is required and must be a number' }`
 - Non‑numeric `lbs` → `422 { error: 'lbs must be a non-negative, finite number' }`
 - Unknown route → `404 { error: 'Not found' }`
-- 
