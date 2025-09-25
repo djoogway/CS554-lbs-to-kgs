@@ -1,0 +1,9 @@
+-- Boot 97e11d30e36549dba231cd41f67c016f --
+Sep 25 01:36:58 ip-172-31-40-126 systemd[1]: Started p1.service - CS554J Project 1 service.
+Sep 25 01:37:00 ip-172-31-40-126 node[545]: listening on 8080
+Sep 25 02:45:35 ip-172-31-40-126 node[545]: ::ffff:127.0.0.1 - - [25/Sep/2025:02:45:35 +0000] "GET /convert?lbs=0 HTTP/1.0" 200 50 "-" "curl/7.81.0"
+Sep 25 02:45:40 ip-172-31-40-126 node[545]: ::ffff:127.0.0.1 - - [25/Sep/2025:02:45:40 +0000] "GET /convert?lbs=150 HTTP/1.0" 200 57 "-" "curl/7.81.0"
+Sep 25 02:45:44 ip-172-31-40-126 node[545]: ::ffff:127.0.0.1 - - [25/Sep/2025:02:45:44 +0000] "GET /convert?lbs=0.1 HTTP/1.0" 200 56 "-" "curl/7.81.0"
+Sep 25 02:45:54 ip-172-31-40-126 node[545]: ::ffff:127.0.0.1 - - [25/Sep/2025:02:45:54 +0000] "GET /convert HTTP/1.0" 400 60 "-" "curl/7.81.0"
+Sep 25 02:46:29 ip-172-31-40-126 node[545]: ::ffff:127.0.0.1 - - [25/Sep/2025:02:46:29 +0000] "GET /convert?lbs=-5 HTTP/1.0" 422 53 "-" "curl/7.81.0"
+Sep 25 02:46:39 ip-172-31-40-126 node[545]: ::ffff:127.0.0.1 - - [25/Sep/2025:02:46:39 +0000] "GET /convert?lbs=NaN HTTP/1.0" 400 60 "-" "curl/7.81.0"
