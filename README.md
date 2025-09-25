@@ -34,3 +34,12 @@ Response should be in the following format if successful (status code 200):
 ```
 
 If the connection fails, the instance is likely not running.
+
+### Cleanup Protocol
+
+After the instance is no longer in use, perform the following cleanup protocol:
+
+1. If the instance will be spun up again at some point, create a snapshot of the current volume.
+2. Stop the current instance. If the instance is no longer needed *period*, terminate it instead.
+3. Delete the current EB volume. Delete all unneeded volume snapshots as well.
+4. Remove your SSH key from AWS (and your local machine).
