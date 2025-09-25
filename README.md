@@ -109,9 +109,12 @@ sudo systemctl status p1 --no-pager
     Source: 0.0.0.0/0
     
 13. Create a nginx config file at `/etc/nginx/sites-available/p1` (note `p1` does not have an extension). Copy the entire contents of deploy-code/nginx/p1.conf into it.
-14. Enable nginx with `sudo systemctl enable --now nginx`.
-
-    If you get an error, run `sudo nginx -t` to test. It should provide an error message for trouble shooting.
-    Otherwise, reload systemctl with `sudo systemctl reload nginx`
+14. Enable nginx:
+```
+sudo ln -sf /etc/nginx/sites-available/p1 /etc/nginx/sites-enabled/p1 # Create a symlink between available and enabled sites.
+sudo systemctl enable --now nginx
+```
+   If you get an error, run `sudo nginx -t` to test. It should provide an error message for trouble shooting.
+   Otherwise, reload systemctl with `sudo systemctl reload nginx`
 
 Congratulations, you have done what I did to make this project.
