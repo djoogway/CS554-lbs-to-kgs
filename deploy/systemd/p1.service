@@ -1,0 +1,16 @@
+[Unit]
+Description=Project 1 lbs->kg service
+After=network.target
+
+
+[Service]
+User=ec2-user
+WorkingDirectory=/opt/project-1-lbs-to-kg
+Environment=PORT=8080
+ExecStart=/usr/bin/node /opt/project-1-lbs-to-kg/src/server.js
+Restart=on-failure
+RestartSec=2
+
+
+[Install]
+WantedBy=multi-user.target
