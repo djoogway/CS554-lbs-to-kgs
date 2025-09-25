@@ -6,27 +6,29 @@ A lightweight, stateless HTTP API that converts pounds to kilograms. Implemented
 
 To use the API, simply call the public endpoint in this format:
 
-http://18.222.139.95/convert?lbs=<number>
+http://18.222.139.95/convert?lbs=[integer]
 
 ## Setup instructions
 
 ### Use
 
 1. Install curl:
-- sudo apt update
-- sudo apt install curl
+```
+sudo apt update
+sudo apt install curl
+```
 
 2. Call the endpoint:
-- curl 'http://18.222.139.95/convert?lbs=<number>'
-
+`curl 'http://18.222.139.95/convert?lbs=[integer]`
 
 Response should be in the following format if successful (status code 200):
 
-{
+```{
     "lbs": <int>,
     "kg": <int>,
     "formula": "kg = lbs * 0.45359237"
 }
+```
 
 ### Test
 
