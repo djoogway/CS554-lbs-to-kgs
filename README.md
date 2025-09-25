@@ -10,8 +10,7 @@ http://18.222.139.95/convert?lbs=
 
 With the integer at the end you wish to convert.
 
-## Setup instructions
-
+## Usage Instructions
 ### Install
 
 There is no installation required to use this endpoint. It's entirely public (as long as the instance is running).
