@@ -50,3 +50,68 @@ Permanent stop (instance service is not needed any longer):
 1. Terminate the instance.
 2. Delete current EB volume and prune all snapshots.
 3. Remove your SSH key from AWS (and your local machine).
+
+## Setup Steps
+
+To create a new instance that provides this service:
+
+1. Launch a new instance from the AWS console. Configure it to use Ubuntu LTS as it's latest.
+2. Create and name an RSA key.
+3. Create a new security group with the following rules:
+   
+   Allow SSH traffic from: My IP
+
+4. Launch the instance. Note it's public IP instance.
+
+On LINUX:
+
+5. Move your key to a notable directory:
+```
+mkdir ~/.ssh
+mv <PATH_TO_KEY>/mysshkey.pem ~/.ssh
+cd ~/.ssh
+```
+
+6. Use the key to SSH to your instance:
+```
+chmod 400 MyKeyPair.pem
+ssh -i MyKeyPair.pem ubuntu@<PUBLIC_IP>
+```
+You should now be user `ubuntu@<PRIVATE_IP>`.
+
+7. Install dependencies:
+```
+sudo apt update
+sudo apt install -y nodejs npm
+sudo apt install -y nginx
+npm init -y
+npm install express morgan
+```
+
+8. Create service file:
+```
+mkdir -p ~/p1 && cd ~/p1
+touch 'server.js'
+```
+
+9. Run `sudo vim server.js` and copy the entire contents of src/server.js into it. Type `:wq` to save and quit.
+10. Create a systemd unit with `touch /etc/systemd/system/p1.service`. Copy the entire contents of deploy-code/systemd/p1.service into it.
+11. Reload and enable systemd:
+```
+sudo systemctl daemon-reload
+sudo systemctl enable --now p1
+sudo systemctl status p1 --no-pager
+```
+12. Go back to the AWS Console, enter your security groups and create a new inbound rule:
+
+    Type: HTTP
+    Port: 80
+    Source: 0.0.0.0/0
+    
+13. Create a nginx config file at `/etc/nginx/sites-available/p1` (note `p1` does not have an extension). Copy the entire contents of deploy-code/nginx/p1.conf into it.
+14. Enable nginx with `sudo systemctl enable --now nginx`.
+
+    If you get an error, run `sudo nginx -t` to test. It should provide an error message for trouble shooting.
+    Otherwise, reload systemctl with `sudo systemctl reload nginx`
+
+Congratulations, you have done what I did to make this project.
