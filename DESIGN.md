@@ -34,7 +34,4 @@ Rule 2:
 - Missing `lbs` → `400 { error: 'Query param lbs is required and must be a number' }`
 - Non‑numeric `lbs` → `422 { error: 'lbs must be a non-negative, finite number' }`
 - Unknown route → `404 { error: 'Not found' }`
-
-## Operations
-- Managed by `systemd` for restart on failure and boot‑time start.
-- Logs via `journalctl -u p1` and NGINX logs.
+- 
