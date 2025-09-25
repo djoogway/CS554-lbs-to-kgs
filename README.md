@@ -12,7 +12,13 @@ With the integer at the end you wish to convert.
 
 ## Setup instructions
 
-### Setup
+### Install
+
+There is no installation required to use this endpoint. It's entirely public (as long as the instance is running).
+
+### Test
+
+You may perform a fast GET test by using curl.
 
 1. Install curl: `sudo apt update && sudo apt install curl`
 
@@ -27,12 +33,4 @@ Response should be in the following format if successful (status code 200):
 }
 ```
 
-### Test
-
-To test if the instance is running, either visit the HTTP in your browser or attempt to curl into it.
-If it does not respond in the above format, there is an error.
-
-
-
-### Setup Instructions:
-
+If the connection fails, the instance is likely not running.
