@@ -1,5 +1,4 @@
-# DESIGN — Project 1 lbs → kg Service
-
+# DESIGN — CS554-lbs-to-kgs
 
 ## Overview
 This project is a minimal, stateless HTTP API that converts pounds to kilograms. Implemented with `Node.js/Express`, reverse proxied by `NGINX`, and deployed on a single EC2 instance via `systemd`.
